@@ -10,11 +10,11 @@
 <?import javafx.scene.text.*?>
 <?scenebuilder-stylesheet stylesheet.css?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mouseTransparent="false" opacity="1.0" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mouseTransparent="false" opacity="1.0" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controller.TelaInicialController">
   <children>
     <GridPane layoutX="0.0" layoutY="50.0" prefHeight="350.0" prefWidth="600.0">
       <children>
-        <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="171.0" prefWidth="301.0" text="AGENDAR EXAME" GridPane.columnIndex="0" GridPane.rowIndex="0">
+        <Button fx:id="agendaExameButton" contentDisplay="TOP" mnemonicParsing="false" prefHeight="171.0" prefWidth="301.0" text="AGENDAR EXAME" GridPane.columnIndex="0" GridPane.rowIndex="0">
           <graphic>
             <ImageView disable="false" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
@@ -26,7 +26,7 @@
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" fx:id="x1" />
           </GridPane.margin>
         </Button>
-        <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="171.0" prefWidth="301.0" text="GERENCIAR AGENDAS" GridPane.columnIndex="0" GridPane.margin="$x1" GridPane.rowIndex="1">
+        <Button fx:id="gerenciaAgendasButton" contentDisplay="TOP" mnemonicParsing="false" prefHeight="171.0" prefWidth="301.0" text="GERENCIAR AGENDAS" GridPane.columnIndex="0" GridPane.margin="$x1" GridPane.rowIndex="1">
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
@@ -35,7 +35,7 @@
             </ImageView>
           </graphic>
         </Button>
-        <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="171.0" prefWidth="301.0" text="AGENDAR CONSULTA" GridPane.columnIndex="1" GridPane.margin="$x1" GridPane.rowIndex="0">
+        <Button fx:id="agendaConsultaButton" contentDisplay="TOP" mnemonicParsing="false" prefHeight="171.0" prefWidth="301.0" text="AGENDAR CONSULTA" GridPane.columnIndex="1" GridPane.margin="$x1" GridPane.rowIndex="0">
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
@@ -44,7 +44,7 @@
             </ImageView>
           </graphic>
         </Button>
-        <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="171.0" prefWidth="301.0" text="ENCERRAR SISTEMA" GridPane.columnIndex="1" GridPane.margin="$x1" GridPane.rowIndex="1">
+        <Button fx:id="encerraSessaoButton" contentDisplay="TOP" mnemonicParsing="false" prefHeight="171.0" prefWidth="301.0" text="ENCERRAR SISTEMA" GridPane.columnIndex="1" GridPane.margin="$x1" GridPane.rowIndex="1">
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>

@@ -56,9 +56,9 @@
         </RadioButton>
         <RadioButton layoutX="144.0" layoutY="306.0" mnemonicParsing="false" prefWidth="73.0" text="Particular" toggleGroup="$pagamento" />
         <Separator layoutX="14.0" layoutY="165.0" prefWidth="258.9998779296875" />
-        <Button layoutX="196.0" layoutY="331.0" mnemonicParsing="false" text="AGENDAR" />
+        <Button fx:id="agendarButton" layoutX="196.0" layoutY="331.0" mnemonicParsing="false" text="AGENDAR" />
       </children>
     </Pane>
-    <Button layoutX="28.0" layoutY="381.0" mnemonicParsing="false" text="VOLTAR" />
+    <Button fx:id="voltarButton" cancelButton="false" layoutX="28.0" layoutY="381.0" mnemonicParsing="false" text="VOLTAR" />
   </children>
 </AnchorPane>
