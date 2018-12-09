@@ -1,163 +1,151 @@
 /*
-Created		08/12/2018
-Modified		09/12/2018
-Project		
-Model			
-Company		
-Author		
-Version		
-Database		PostgreSQL 8.1 
+created		08/12/2018
+modified		09/12/2018
+project		
+model			
+company		
+author		
+version		
+database		postgresql 8.1 
 */
 
 
-/* Create Domains */
+/* drop referential integrity triggers */
 
 
 
-/* Create Tables */
 
 
-Create table "Medico"
+/* drop domains */
+
+
+
+/* drop indexes */
+
+
+
+/* create domains */
+
+
+
+/* create tables */
+
+
+create table "medico"
 (
-	"cod_cpf" Char(11) NOT NULL UNIQUE,
-	"cod_crm" Integer NOT NULL,
-	"nom_medico" Varchar NOT NULL,
-	"num_telefone" Bigint NOT NULL,
-	"des_email" Varchar,
-	"hora_inicial1" Timestamp NOT NULL,
-	"hora_inicial2" Timestamp NOT NULL,
-	"hora_inicial3" Timestamp NOT NULL,
-	"hora_intervalo" Smallint NOT NULL,
+	"cod_cpf" char(11) not null unique,
+	"cod_crm" integer not null,
+	"nom_medico" varchar not null,
+	"num_telefone" bigint not null,
+	"des_email" varchar,
+	"hora_inicial1" timestamp not null,
+	"hora_inicial2" timestamp not null,
+	"hora_inicial3" timestamp not null,
+	"hora_intervalo" smallint not null,
  primary key ("cod_cpf")
-) Without Oids;
+);
 
 
-Create table "Especialidade"
+create table "especialidade"
 (
-	"cod_especialidade" Serial NOT NULL,
-	"nom_especialidade" Varchar NOT NULL,
+	"cod_especialidade" serial not null,
+	"nom_especialidade" varchar not null,
  primary key ("cod_especialidade")
-) Without Oids;
+);
 
 
-Create table "MedicoEspecialidade"
+create table "medicoespecialidade"
 (
-	"cod_cpf" Char(11) NOT NULL,
-	"cod_especialidade" Integer NOT NULL,
+	"cod_cpf" char(11) not null,
+	"cod_especialidade" integer not null,
  primary key ("cod_cpf","cod_especialidade")
-) Without Oids;
+);
 
 
-Create table "AgendaMedico"
+create table "agendamedico"
 (
-	"cod_cpf" Char(11) NOT NULL,
+	"cod_cpf" char(11) not null,
  primary key ("cod_cpf")
-) Without Oids;
+);
 
 
-Create table "Consulta"
+create table "consulta"
 (
-	"cod_consulta" BigSerial NOT NULL,
-	"hora_consulta" Timestamp NOT NULL,
-	"cod_cpf" Char(11) NOT NULL,
-	"cod_cliente" Bigint NOT NULL,
+	"cod_consulta" bigserial not null,
+	"hora_consulta" timestamp not null,
+	"cod_cpf" char(11) not null,
+	"cod_cliente" bigint not null,
  primary key ("cod_consulta","cod_cpf","cod_cliente")
-) Without Oids;
+);
 
 
-Create table "Cliente"
+create table "cliente"
 (
-	"cod_cliente" BigSerial NOT NULL,
-	"nom_cliente" Char(100) NOT NULL,
-	"num_telefone" Bigint,
+	"cod_cliente" bigserial not null,
+	"nom_cliente" char(100) not null,
+	"num_telefone" bigint,
  primary key ("cod_cliente")
-) Without Oids;
+);
 
 
-Create table "Equipamento"
+create table "equipamento"
 (
-	"cod_equipamento" BigSerial NOT NULL,
-	"cod_tipoExame" Integer NOT NULL,
-	"nom_equipamento" Char(100) NOT NULL,
-	"idt_defeito" Boolean NOT NULL Default FALSE,
- primary key ("cod_equipamento","cod_tipoExame")
-) Without Oids;
+	"cod_equipamento" bigserial not null,
+	"cod_tipoexame" integer not null,
+	"nom_equipamento" char(100) not null,
+	"idt_defeito" boolean not null default false,
+ primary key ("cod_equipamento","cod_tipoexame")
+);
 
 
-Create table "TipoExame"
+create table "tipoexame"
 (
-	"cod_tipoExame" Serial NOT NULL,
-	"nom_tipoExame" Char(100) NOT NULL,
- primary key ("cod_tipoExame")
-) Without Oids;
+	"cod_tipoexame" serial not null,
+	"nom_tipoexame" char(100) not null,
+ primary key ("cod_tipoexame")
+);
 
 
-Create table "MedicoEspecExame"
+create table "medicoespecexame"
 (
-	"cod_cpf" Char(11) NOT NULL,
-	"cod_tipoExame" Integer NOT NULL,
- primary key ("cod_cpf","cod_tipoExame")
-) Without Oids;
+	"cod_cpf" char(11) not null,
+	"cod_tipoexame" integer not null,
+ primary key ("cod_cpf","cod_tipoexame")
+);
 
 
-Create table "AgendaEquipamento"
+create table "agendaequipamento"
 (
-	"cod_equipamento" Bigint NOT NULL,
-	"cod_tipoExame" Integer NOT NULL,
- primary key ("cod_equipamento","cod_tipoExame")
-) Without Oids;
+	"cod_equipamento" bigint not null,
+	"cod_tipoexame" integer not null,
+ primary key ("cod_equipamento","cod_tipoexame")
+);
 
 
-Create table "Exame"
+create table "exame"
 (
-	"cod_exame" BigSerial NOT NULL,
-	"cod_cliente" Bigint NOT NULL,
-	"desc_exame" Char(150) NOT NULL,
-	"form_atendimento" Boolean NOT NULL,
-	"cod_equipamento" Bigint NOT NULL,
-	"cod_tipoExame" Integer NOT NULL,
-	"cod_cpf" Char(11) NOT NULL,
- primary key ("cod_exame","cod_cliente","cod_equipamento","cod_tipoExame","cod_cpf")
-) Without Oids;
+	"cod_exame" bigserial not null,
+	"cod_cliente" bigint not null,
+	"desc_exame" char(150) not null,
+	"form_atendimento" boolean not null,
+	"cod_equipamento" bigint not null,
+	"cod_tipoexame" integer not null,
+	"cod_cpf" char(11) not null,
+ primary key ("cod_exame","cod_cliente","cod_equipamento","cod_tipoexame","cod_cpf")
+);
 
 
 
-/* Create Tab 'Others' for Selected Tables */
+/* create tab 'others' for selected tables */
 
 
-/* Create Alternate Keys */
-
-
-
-/* Create Indexes */
+/* create indexes */
 
 
 
-/* Create Foreign Keys */
+/* create referential integrity triggers */
 
-Alter table "MedicoEspecialidade" add  foreign key ("cod_cpf") references "Medico" ("cod_cpf") on update restrict on delete restrict;
 
-Alter table "AgendaMedico" add  foreign key ("cod_cpf") references "Medico" ("cod_cpf") on update restrict on delete restrict;
-
-Alter table "MedicoEspecExame" add  foreign key ("cod_cpf") references "Medico" ("cod_cpf") on update restrict on delete restrict;
-
-Alter table "MedicoEspecialidade" add  foreign key ("cod_especialidade") references "Especialidade" ("cod_especialidade") on update restrict on delete restrict;
-
-Alter table "Consulta" add  foreign key ("cod_cpf") references "AgendaMedico" ("cod_cpf") on update restrict on delete restrict;
-
-Alter table "Exame" add  foreign key ("cod_cpf") references "AgendaMedico" ("cod_cpf") on update restrict on delete restrict;
-
-Alter table "Consulta" add  foreign key ("cod_cliente") references "Cliente" ("cod_cliente") on update restrict on delete restrict;
-
-Alter table "Exame" add  foreign key ("cod_cliente") references "Cliente" ("cod_cliente") on update restrict on delete restrict;
-
-Alter table "AgendaEquipamento" add  foreign key ("cod_equipamento","cod_tipoExame") references "Equipamento" ("cod_equipamento","cod_tipoExame") on update restrict on delete restrict;
-
-Alter table "MedicoEspecExame" add  foreign key ("cod_tipoExame") references "TipoExame" ("cod_tipoExame") on update restrict on delete restrict;
-
-Alter table "Equipamento" add  foreign key ("cod_tipoExame") references "TipoExame" ("cod_tipoExame") on update restrict on delete restrict;
-
-Alter table "Exame" add  foreign key ("cod_equipamento","cod_tipoExame") references "AgendaEquipamento" ("cod_equipamento","cod_tipoExame") on update restrict on delete restrict;
 
 
 

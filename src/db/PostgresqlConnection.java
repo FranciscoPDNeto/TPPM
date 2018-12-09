@@ -8,7 +8,7 @@ public class PostgresqlConnection implements DatabaseConnection {
 
     private final static String dbDriver = "org.postgresql.Driver";
     private final static String dbURL = "jdbc:postgresql://127.0.0.1:5432/tp";
-    private final static String user = "user";
+    private final static String user = "postgres";
     private final static String pass = "password";
 
     public PostgresqlConnection() {
