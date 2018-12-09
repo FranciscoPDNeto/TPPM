@@ -4,8 +4,8 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : 07/12/2018, 19:17:27
-    Author     : orlan
+    Created on : 07/12/2018, 21:58:07
+    Author     : ejrocha
 */
 
 *{
@@ -44,7 +44,8 @@ TableView .column-header{
 }
 
 TextField, 
-ChoiceBox{
+ChoiceBox,
+TextArea{
     -fx-background-radius: 0;
 }
 
@@ -66,4 +67,9 @@ TableView .column-header .text{
 
 .check-box:selected .box {
     -fx-background-color: #5ADAA7;
+}
+
+#agendamento .text,
+#medico .text{
+    -fx-fill: white;
 }
