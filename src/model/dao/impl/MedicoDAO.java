@@ -71,7 +71,7 @@ public class MedicoDAO implements IMedicoDAO {
 
         Connection connection = ConnectionManager.getInstance().getConnection();
 
-        String sql = "SELECT a.cod_cpf, a.cod_crm, a.cod_cpf, a.nom_medico, a.num_telefone, a.des_email, a.hora_inicial1, a.hora_inicial2, a.hora_inicial3, a.hora_intervalo FROM medico a JOIN medicoespecialidade b ON a.cod_cpf = b.cod_cpf WHERE b.cod_especialidade = ?";
+        String sql = "SELECT a.cod_cpf, a.cod_crm, a.nom_medico, a.num_telefone, a.des_email, a.hora_inicial1, a.hora_inicial2, a.hora_inicial3, a.hora_intervalo FROM medico a JOIN medicoespecialidade b ON a.cod_cpf = b.cod_cpf WHERE b.cod_especialidade = ?";
         PreparedStatement pstmt = connection.prepareStatement(sql);
         pstmt.setLong(1, especialidade.getCodigo());
         ResultSet rs = pstmt.executeQuery();

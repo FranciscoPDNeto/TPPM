@@ -1,8 +1,8 @@
 package model.service.impl;
 
-import model.dao.IMedicoDAO;
-import model.dao.impl.MedicoDAO;
-import model.domain.Medico;
+import model.dao.*;
+import model.dao.impl.*;
+import model.domain.*;
 import model.service.IManterCadastros;
 
 public class ManterCadastros implements IManterCadastros {
@@ -36,6 +36,20 @@ public class ManterCadastros implements IManterCadastros {
 
         IMedicoDAO medicoDAO = new MedicoDAO();
         medicoDAO.inserir(medico);
+    }
+    
+    @Override
+    public void cadastrarEquipamento(Equipamento equipamento) throws Exception {
+        
+        if (equipamento.getCodigoTipoExame() < 0) {
+            throw new Exception("Tipo de exmae inválido.");
+        }
+        if (equipamento.getNome() == null) {
+            throw new Exception("Nome do equipamento inválido.");
+        }
+        
+        IEquipamentoDAO equipamentoDAO = new EquipamentoDAO();
+        equipamentoDAO.inserir(equipamento);
     }
 
 }
