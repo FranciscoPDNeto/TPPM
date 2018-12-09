@@ -8,6 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
+<?scenebuilder-stylesheet stylesheet.css?>
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mouseTransparent="false" opacity="1.0" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
   <children>
@@ -17,7 +18,7 @@
           <graphic>
             <ImageView disable="false" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../saracura/images/plus64.png" />
+                <Image url="@images/plus64.png" />
               </image>
             </ImageView>
           </graphic>
@@ -29,7 +30,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../saracura/images/edit64.png" />
+                <Image url="@images/edit64.png" />
               </image>
             </ImageView>
           </graphic>
@@ -38,7 +39,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../saracura/images/report64.png" />
+                <Image url="@images/report64.png" />
               </image>
             </ImageView>
           </graphic>
@@ -47,7 +48,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../saracura/images/mark64.png" />
+                <Image url="@images/mark64.png" />
               </image>
             </ImageView>
           </graphic>
@@ -58,7 +59,7 @@
         <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="10.0" prefWidth="298.0" />
       </columnConstraints>
       <padding>
-        <Insets/>
+        <Insets />
       </padding>
       <rowConstraints>
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
