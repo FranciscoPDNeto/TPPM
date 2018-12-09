@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-stylesheet stylesheet.css?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mouseTransparent="false" opacity="1.0" prefHeight="400.0" prefWidth="600.0000999999975" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <children>
+    <Label fx:id="titulo" alignment="CENTER" contentDisplay="TOP" layoutX="0.0" layoutY="0.0" prefHeight="50.0" prefWidth="600.0001220703125" text="CONVÊNIO" textAlignment="CENTER">
+      <font>
+        <Font name="Corbel" size="14.0" />
+      </font>
+    </Label>
+    <Pane fx:id="medico" layoutX="14.0" layoutY="50.0" prefHeight="336.0" prefWidth="572.0001220703125">
+      <children>
+        <TextField disable="false" editable="true" layoutX="157.0" layoutY="30.0" prefWidth="259.0" promptText="Ex: Saúde Vida" text="" />
+        <Label layoutX="235.0" layoutY="14.0" text="Nome do Convênio" />
+        <Label layoutX="227.0" layoutY="66.0" text="Matrícula no Convênio" />
+        <TextField disable="false" editable="false" layoutX="157.0" layoutY="82.0" prefWidth="259.0" promptText="0000000-0000000" text="" />
+        <Button layoutX="202.0" layoutY="128.0" mnemonicParsing="false" text="SOLICITAR AUTORIZAÇÃO" />
+        <Button layoutX="246.0" layoutY="295.0" mnemonicParsing="false" text="CANCELAR" />
+        <Label fx:id="aviso" contentDisplay="CENTER" layoutX="101.0" layoutY="222.0" text="Convênio XXX não autorizou o procedimento YYY para o paciente ZZZ" textAlignment="CENTER" />
+        <ProgressBar disable="false" layoutX="187.0" layoutY="194.0" prefWidth="200.0" progress="0.68" />
+      </children>
+    </Pane>
+  </children>
+</AnchorPane>
