@@ -23,6 +23,7 @@
         <TableColumn editable="false" prefWidth="500.0" resizable="true" sortable="true" text="MÉDICOS" visible="true" />
       </columns>
     </TableView>
-    <Button layoutX="257.0" layoutY="365.0" mnemonicParsing="false" text="CONTINUAR" />
+    <Button layoutX="493.0" layoutY="365.0" mnemonicParsing="false" text="CONTINUAR" />
+    <Button layoutX="15.0" layoutY="365.0" mnemonicParsing="false" prefWidth="92.0" text="VOLTAR" />
   </children>
 </AnchorPane>
