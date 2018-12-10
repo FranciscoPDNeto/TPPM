@@ -17,12 +17,7 @@
         <Font name="Corbel" size="14.0" />
       </font>
     </Label>
-    <TableView fx:id="examesTable" editable="false" layoutX="15.0" layoutY="66.0" prefHeight="284.0" prefWidth="570.0" tableMenuButtonVisible="false">
-      <columns>
-        <TableColumn editable="false" maxWidth="5000.0" minWidth="10.0" prefWidth="73.0" sortable="false" text="" />
-        <TableColumn editable="false" prefWidth="500.0" resizable="true" sortable="true" text="EXAMES" visible="true" />
-      </columns>
-    </TableView>
     <Button fx:id="continuarButton" layoutX="257.0" layoutY="365.0" mnemonicParsing="false" text="CONTINUAR" />
+    <ListView fx:id="examesList" layoutX="0.0" layoutY="50.0" prefHeight="307.0" prefWidth="601.0" />
   </children>
 </AnchorPane>
