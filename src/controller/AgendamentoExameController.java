@@ -151,10 +151,10 @@ public class AgendamentoExameController {
             @Override
             public void handle(ActionEvent event) {
                 if (pacienteTextField.getText().isEmpty() || telefoneTextField.getText().isEmpty()) {
-                    JOptionPane.showConfirmDialog(null, "Há campos que não podem ser vazios");
+                    JOptionPane.showMessageDialog(null, "Há campos que não podem ser vazios");
                     return;
                 }
-                final Stage stage = (Stage) voltarButton.getScene().getWindow();
+                final Stage stage = (Stage) continuarButton.getScene().getWindow();
                 AnchorPane page;
                 try {
                     page = (AnchorPane) FXMLLoader.load(AgendamentoExameController.class.getResource(
