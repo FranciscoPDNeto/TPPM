@@ -95,5 +95,36 @@ public class MedicoDAO implements IMedicoDAO {
 
         return medicos;
     }
+    
+    @Override
+    public Medico consultarPorNome(String nome) throws ClassNotFoundException, Exception {
+        Medico medico = null;
+        Connection connection = ConnectionManager.getInstance().getConnection();
+        
+        String sql = "SELECT * FROM medico WHERE nom_medico = ?";
+        
+        PreparedStatement pstmt = connection.prepareStatement(sql);
+        pstmt.setString(1, nome);
+        ResultSet rs = pstmt.executeQuery();
+        
+        if (rs.next()) {
+            medico = new Medico();
+            medico.setCrm(rs.getInt("cod_crm"));
+            medico.setCpf(rs.getString("cod_cpf"));
+            medico.setNome(nome);
+            medico.setTelefone(rs.getLong("num_telefone"));
+            medico.setEmail(rs.getString("des_email"));
+            medico.setHora1(rs.getDate("hora_inicial1"));
+            medico.setHora2(rs.getDate("hora_inicial2"));
+            medico.setHora3(rs.getDate("hora_inicial3"));
+            medico.setHoraIntervalo(rs.getDate("hora_intervalo"));
+        }
+        
+        rs.close();
+        pstmt.close();
+        connection.close();
+        
+        return medico;
+    }
 
 }
