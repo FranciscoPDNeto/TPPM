@@ -14,4 +14,5 @@ import model.domain.TipoExame;
  */
 public interface ITipoExameDAO {
     public List<TipoExame> listarTiposExame() throws ClassNotFoundException, Exception;
+    public TipoExame consultarPorNome(String nomeTipoExame) throws ClassNotFoundException, Exception;
 }

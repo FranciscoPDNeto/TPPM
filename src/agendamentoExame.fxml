@@ -10,7 +10,7 @@
 <?import javafx.scene.text.*?>
 <?scenebuilder-stylesheet stylesheet.css?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mouseTransparent="false" opacity="1.0" prefHeight="430.0" prefWidth="600.0000999999975" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mouseTransparent="false" opacity="1.0" prefHeight="430.0" prefWidth="600.0000999999975" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controller.AgendamentoExameController">
   <children>
     <Label fx:id="titulo" alignment="CENTER" contentDisplay="TOP" layoutX="0.0" layoutY="0.0" prefHeight="50.0" prefWidth="600.0001220703125" text="AGENDA" textAlignment="CENTER">
       <font>
@@ -21,32 +21,31 @@
       <children>
         <Label layoutX="14.0" layoutY="14.0" prefWidth="259.0" text="AGENDAMENTO" />
         <Label layoutX="13.0" layoutY="38.0" text="Data" />
-        <TextField disable="false" editable="false" layoutX="45.0" layoutY="35.0" prefWidth="73.0" promptText="00/00/0000" text="" />
-        <Button layoutX="134.0" layoutY="35.0" mnemonicParsing="false" text="BUSCAR" />
-        <TableView layoutX="13.0" layoutY="66.0" prefHeight="99.0" prefWidth="545.999977929685">
+        <TextField fx:id="dataTextField" disable="false" editable="true" layoutX="45.0" layoutY="35.0" prefWidth="73.0" promptText="00/00/0000" text="" />
+        <Button fx:id="buscarButton" layoutX="134.0" layoutY="35.0" mnemonicParsing="false" text="BUSCAR" />
+        <TableView fx:id="medicosTable" layoutX="13.0" layoutY="66.0" prefHeight="99.0" prefWidth="545.999977929685">
           <columns>
             <TableColumn editable="false" maxWidth="5000.0" minWidth="10.0" prefWidth="300.0" sortable="true" text="Médico" />
             <TableColumn editable="false" maxWidth="5000.0" minWidth="10.0" prefWidth="150.0" text="Equipamento" />
-            <TableColumn editable="false" maxWidth="5000.0" minWidth="10.0" prefWidth="50.0" sortable="true" text="Hora" />
-            <TableColumn prefWidth="46.0" text="" />
+            <TableColumn editable="false" maxWidth="5000.0" minWidth="10.0" prefWidth="96.0" sortable="true" text="Hora" />
           </columns>
         </TableView>
         <Label layoutX="14.0" layoutY="179.0" text="Paciente" />
-        <TextField layoutX="14.0" layoutY="195.0" prefWidth="258.999977929685" promptText="Nome" />
+        <TextField fx:id="pacienteTextField" layoutX="14.0" layoutY="195.0" prefWidth="258.999977929685" promptText="Nome" />
         <Label layoutX="14.0" layoutY="217.0" text="Telefone" />
-        <TextField layoutX="13.0" layoutY="233.0" prefWidth="258.999977929685" promptText="(00) 00000-0000" />
-        <TextArea layoutX="300.0" layoutY="195.0" prefHeight="114.0390625" prefWidth="259.0" wrapText="true" />
+        <TextField fx:id="telefoneTextField" layoutX="13.0" layoutY="233.0" prefWidth="258.999977929685" promptText="(00) 00000-0000" />
+        <TextArea fx:id="especificacaoTextArea" layoutX="300.0" layoutY="195.0" prefHeight="114.0390625" prefWidth="259.0" wrapText="true" />
         <Label layoutX="300.0" layoutY="179.0" text="Especificação" />
-        <RadioButton layoutX="187.0" layoutY="286.0" mnemonicParsing="false" text="Particular">
+        <RadioButton fx:id="particularRadioButton" layoutX="187.0" layoutY="286.0" mnemonicParsing="false" text="Particular">
           <toggleGroup>
             <ToggleGroup fx:id="atendimento" />
           </toggleGroup>
         </RadioButton>
-        <RadioButton layoutX="13.0" layoutY="286.0" mnemonicParsing="false" selected="true" text="Convênio" toggleGroup="$atendimento" />
+        <RadioButton fx:id="convenioRadioButton" layoutX="13.0" layoutY="286.0" mnemonicParsing="false" selected="true" text="Convênio" toggleGroup="$atendimento" />
         <Label layoutX="12.0" layoutY="267.0" text="Atendimento" />
       </children>
     </Pane>
-    <Button layoutX="28.0" layoutY="381.0" mnemonicParsing="false" text="VOLTAR" />
-    <Button layoutX="481.0" layoutY="381.0" mnemonicParsing="false" text="CONTINUAR" />
+    <Button fx:id="voltarButton" layoutX="28.0" layoutY="381.0" mnemonicParsing="false" text="VOLTAR" />
+    <Button fx:id="continuarButton" layoutX="481.0" layoutY="381.0" mnemonicParsing="false" text="CONTINUAR" />
   </children>
 </AnchorPane>
